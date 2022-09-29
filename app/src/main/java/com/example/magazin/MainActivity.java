@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.magazin.adapter.CategoryAdapter;
 import com.example.magazin.adapter.CourseAdapter;
@@ -18,7 +20,9 @@ public class MainActivity extends AppCompatActivity {
 
     CategoryAdapter categoryAdapter;
     RecyclerView categoryRecycler, courseRecycler;
-    CourseAdapter courseAdapter;
+    static CourseAdapter courseAdapter;
+    static List<Course> courseList = new ArrayList<>();
+    static List<Course> fullCoursesList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,11 +37,12 @@ public class MainActivity extends AppCompatActivity {
         
         setCategoryRecycler(categoryList);
 
-        List<Course> courseList = new ArrayList<>();
-        courseList.add(new Course(1, "java", "Профессия Java\nразработчик", "1 января", "начальный", "#424345"));
-        courseList.add(new Course(2, "python", "Профессия Python\nразработчик", "10 января", "начальный", "#9FA52D"));
+
+        courseList.add(new Course(1, "java", "Профессия Java\nразработчик", "1 января", "начальный", "#424345","", 3));
+        courseList.add(new Course(2, "python", "Профессия Python\nразработчик", "10 января", "начальный", "#9FA52D","", 1));
 ////        categoryList.add(new Category(3, "Языки"));
 ////        categoryList.add(new Category(4, "Прочее"));
+        fullCoursesList.addAll(courseList);
         setCourseRecycler(courseList);
     }
 
@@ -59,5 +64,27 @@ public class MainActivity extends AppCompatActivity {
 
         categoryAdapter = new CategoryAdapter(this, categoryList);
         categoryRecycler.setAdapter(categoryAdapter);
+    }
+    public static void showCoursesByCategory(int category){
+
+        courseList.clear();
+        courseList.addAll(fullCoursesList);
+        List<Course> filterCourses = new ArrayList<>();
+
+        for(Course c : courseList){
+            if(c.getCategory() == category)
+                filterCourses.add(c);
+        }
+
+        courseList.clear();
+        courseList.addAll(filterCourses);
+
+        courseAdapter.notifyDataSetChanged();
+    }
+    public void openShoppingCart(View view){
+
+    Intent intent = new Intent( this, OrderPage.class);
+
+
     }
 }
