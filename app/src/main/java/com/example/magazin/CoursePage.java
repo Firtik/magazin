@@ -37,6 +37,6 @@ public class CoursePage extends AppCompatActivity {
 
         int item_id = getIntent().getIntExtra("courseId", 0);
         Order.items_id.add(item_id);
-        Toast.makeText(this, "Очередной бесполезный курс добавлен :(", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Курс добавлен в корзину! :)", Toast.LENGTH_LONG).show();
     }
 }

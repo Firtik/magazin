@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
     public void openShoppingCart(View view){
 
     Intent intent = new Intent( this, OrderPage.class);
-
+    startActivity(intent);
 
     }
 }
