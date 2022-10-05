@@ -5,17 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/mainBgColor"
-    tools:context=".MainActivity">
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/categoryRecycler"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/imageView2"
-        tools:listitem="@layout/category_item" />
+    tools:context=".AboutUs">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -60,7 +50,6 @@
             android:layout_height="145dp"
             android:fontFamily="@font/mon"
             android:gravity="center"
-            android:onClick="openAboutPage"
             android:rotation="270"
             android:text="@string/about_text"
             android:textColor="@color/black"
@@ -75,6 +64,7 @@
             android:layout_height="145dp"
             android:fontFamily="@font/montserrat_bold"
             android:gravity="center"
+            android:onClick="openMainPage"
             android:rotation="270"
             android:text="@string/main_scene_text"
             android:textColor="@color/black"
@@ -88,12 +78,14 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="76dp"
         android:layout_marginTop="60dp"
         android:fontFamily="@font/mon"
-        android:text="@string/logo_of_app_1"
+        android:text="About"
         android:textColor="@color/black"
         android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.102"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -104,48 +96,37 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="60dp"
         android:fontFamily="@font/montserrat_bold"
-        android:text="@string/logo_of_app_2"
+        android:text="Us"
         android:textColor="@color/name_of_app"
         android:textSize="40sp"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="15dp"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayout"
-        android:contentDescription="@string/sales_icon"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:srcCompat="@drawable/ic_filter" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/courseRecycler"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="40dp"
+        android:id="@+id/imageView4"
+        android:layout_width="266dp"
+        android:layout_height="212dp"
+        android:layout_marginStart="44dp"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="150dp"
+        android:layout_marginEnd="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:srcCompat="@drawable/opengraph_main" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="265dp"
+        android:layout_height="309dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="40dp"
+        android:fontFamily="@font/mon"
+        android:text="Онлайн школа программирования для начинающих по качеству и объему выдаваемого материала не отличается от очного обучения. Зато при организации процесса дистанционно получаем ряд преимуществ:  ИТ школа программирования всегда под рукой. Не нужно тратить время на дорогу, достаточно иметь выход в интернет и желание учиться; нет ограничения в виде географического фактора. Наша школа программирования доступна в любой точке земного шара."
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout"
-        app:layout_constraintTop_toBottomOf="@+id/categoryRecycler" />
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:contentDescription="@string/app_name"
-        android:onClick="openShoppingCart"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayout"
-        app:layout_constraintTop_toBottomOf="@+id/courseRecycler"
-        app:srcCompat="@drawable/ic_shop_cart" />
-
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

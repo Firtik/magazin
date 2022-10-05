@@ -40,8 +40,6 @@ public class MainActivity extends AppCompatActivity {
 
         courseList.add(new Course(1, "java", "Профессия Java\nразработчик", "1 января", "начальный", "#424345","", 3));
         courseList.add(new Course(2, "python", "Профессия Python\nразработчик", "10 января", "начальный", "#9FA52D","", 1));
-////        categoryList.add(new Category(3, "Языки"));
-////        categoryList.add(new Category(4, "Прочее"));
         fullCoursesList.addAll(courseList);
         setCourseRecycler(courseList);
     }
@@ -86,5 +84,13 @@ public class MainActivity extends AppCompatActivity {
     Intent intent = new Intent( this, OrderPage.class);
     startActivity(intent);
 
+    }
+    public void openAboutPage(View view){
+        Intent intent = new Intent(this, AboutUs.class);
+        startActivity(intent);
+    }
+    public void openContactsPage(View view){
+        Intent intent = new Intent(this, Contacts.class);
+        startActivity(intent);
     }
 }
